@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material3-based theme replacing the legacy Theme.Sample / android:Theme.Light chain. -->
+    <style name="Theme.BasicNetworking" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/darker_gray</item>
+    </style>
+</resources>
