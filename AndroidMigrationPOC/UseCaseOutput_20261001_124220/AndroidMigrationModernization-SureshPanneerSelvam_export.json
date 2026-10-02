@@ -1,0 +1,846 @@
+{
+  "id": 15206,
+  "is_active": true,
+  "created_by": 12846,
+  "created_at": "2026-10-01T11:58:27.228176+00:00",
+  "modified_by": 12846,
+  "modified_at": "2026-10-01T12:40:50.119758+00:00",
+  "name": "AndroidMigrationModernization-SureshPanneerSelvam",
+  "requirement": "Act as an expert Android migration engineer. I am attaching an old, deprecated Android sample project (Google's archived \"android-BasicNetworking\" sample) written in Java using old Gradle, the legacy Android support library, and deprecated connectivity-check APIs. Analyze the attached source files and produce a migration plan plus migrated code to bring this project to the latest Android standards: (1) update Gradle/AGP to current versions and convert build.gradle to Kotlin DSL, (2) migrate from the legacy support library to AndroidX, (3) convert Java source files to idiomatic Kotlin, (4) replace deprecated connectivity APIs (e.g. NetworkInfo, isConnectedOrConnecting) with the modern ConnectivityManager.NetworkCallback / NetworkCapabilities APIs, (5) update the AndroidManifest.xml for current targetSdk requirements (e.g. explicit android:exported), and (6) list any other deprecated APIs found with their modern replacements. Provide the final migrated file contents and a summary table of every change made with old API vs new API.\n\nUploaded requirement files:\n1790854130621/legacy_source_bundle.txt\n\nFiles: legacy_source_bundle.txt",
+  "project_id": 6,
+  "description": "Act as an expert Android migration engineer. I am attaching an old, deprecated Android sample project (Google's archived \"android-BasicNetworking\" sample) written in Java using old Gradle, the legacy Android support library, and deprecated connectivity-check APIs. Analyze the attached source files and produce a migration plan plus migrated code to bring this project to the latest Android standards: (1) update Gradle/AGP to current versions and convert build.gradle to Kotlin DSL, (2) migrate from the legacy support library to AndroidX, (3) convert Java source files to idiomatic Kotlin, (4) replace deprecated connectivity APIs (e.g. NetworkInfo, isConnectedOrConnecting) with the modern ConnectivityManager.NetworkCallback / NetworkCapabilities APIs, (5) update the AndroidManifest.xml for current targetSdk requirements (e.g. explicit android:exported), and (6) list any other deprecated APIs found with their modern replacements. Provide the final migrated file contents and a summary table of every change made with old API vs new API.",
+  "category_id": 1,
+  "usecase_json": {
+    "plan": "I've created a development plan for the Android Migration Modernization and reviewed the agents available on the platform. The process will have:\n\n- Code Migration_Migration Plan Agent_3277 will analyze the legacy Android Java project, identify Gradle, AndroidX, Kotlin, manifest, and deprecated API migration steps, and create the migration plan.\n- Code Migration_Code Migration Agent_3136 will generate the migrated Kotlin source, Kotlin DSL Gradle files, AndroidX dependency updates, modern connectivity implementation, and manifest changes.\n- Code Migration_Migration Review Agent_3603 will review the migrated output for completeness, compatibility with current Android standards, and correct replacement of deprecated APIs.\n- Code Validation Agent_Ravi will validate the final file set against the requirements, including build configuration consistency, API usage, and migration acceptance criteria.\n- Implementation Summary Agent_Gaurav_chhonker will produce the final summary table of changes, including old API versus new API replacements and delivery notes.\n\nPlease review the agents and begin testing when ready.",
+    "init_messages": null,
+    "agent_ids": [
+      37754,
+      37755,
+      37756,
+      39348,
+      38976
+    ],
+    "selected_agents": [
+      {
+        "id": 37754,
+        "is_active": true,
+        "created_by": null,
+        "created_at": "2026-09-17T05:04:18.206820",
+        "modified_by": null,
+        "modified_at": "2026-09-17T12:36:04.701750",
+        "agent_name": "Code Migration_Migration Plan Agent_3277",
+        "description": "Agent for generating migration plan for migrating code from source language to target language",
+        "project_id": 6,
+        "design_pattern_id": 21,
+        "framework_id": 10,
+        "llm_model_id": 3212,
+        "security_group_id": null,
+        "human_input_mode": false,
+        "max_consecutive_reply": 25,
+        "prompt_id": 23414,
+        "rag_ids": [],
+        "a2a_enabled": true,
+        "mcp_enabled": false,
+        "is_public": false,
+        "version": "1.0",
+        "parent_agent_id": null,
+        "agent_config": {
+          "llm_parameters": {
+            "temperature": 0.1,
+            "max_tokens": 19984
+          },
+          "a2a_config": null
+        },
+        "publish_status": "Published",
+        "trace_id": {
+          "status": "success",
+          "trace_id": "08fc3384-8334-4d03-b525-2d2b0b2b492c"
+        },
+        "tags": [],
+        "tool_ids": [],
+        "is_evaluated": true,
+        "name": "Code Migration_Migration Plan Agent_3277"
+      },
+      {
+        "id": 37755,
+        "is_active": true,
+        "created_by": null,
+        "created_at": "2026-09-17T05:04:18.573685",
+        "modified_by": null,
+        "modified_at": "2026-09-17T12:38:16.625362",
+        "agent_name": "Code Migration_Code Migration Agent_3136",
+        "description": "Agent for generating migration code for migration from source to target language.",
+        "project_id": 6,
+        "design_pattern_id": 21,
+        "framework_id": 10,
+        "llm_model_id": 3212,
+        "security_group_id": null,
+        "human_input_mode": false,
+        "max_consecutive_reply": 5,
+        "prompt_id": 23415,
+        "rag_ids": [],
+        "a2a_enabled": false,
+        "mcp_enabled": false,
+        "is_public": false,
+        "version": "1.0",
+        "parent_agent_id": null,
+        "agent_config": {
+          "llm_parameters": {
+            "temperature": 0.1,
+            "max_tokens": 19984
+          },
+          "a2a_config": null
+        },
+        "publish_status": "Published",
+        "trace_id": {
+          "status": "success",
+          "trace_id": "7c2e3c9f-37ac-464c-9527-cb693eefdc29"
+        },
+        "tags": [],
+        "tool_ids": [],
+        "is_evaluated": true,
+        "name": "Code Migration_Code Migration Agent_3136"
+      },
+      {
+        "id": 37756,
+        "is_active": true,
+        "created_by": null,
+        "created_at": "2026-09-17T05:04:18.846073",
+        "modified_by": null,
+        "modified_at": "2026-09-17T12:40:01.622628",
+        "agent_name": "Code Migration_Migration Review Agent_3603",
+        "description": "Agent for reviewing the migrated code to generate the fully migration code from source to target language.",
+        "project_id": 6,
+        "design_pattern_id": 21,
+        "framework_id": 10,
+        "llm_model_id": 3212,
+        "security_group_id": null,
+        "human_input_mode": false,
+        "max_consecutive_reply": 5,
+        "prompt_id": 23416,
+        "rag_ids": [],
+        "a2a_enabled": false,
+        "mcp_enabled": false,
+        "is_public": false,
+        "version": "1.0",
+        "parent_agent_id": null,
+        "agent_config": {
+          "llm_parameters": {
+            "temperature": 0.1,
+            "max_tokens": 19984
+          },
+          "a2a_config": null
+        },
+        "publish_status": "Published",
+        "trace_id": {
+          "status": "success",
+          "trace_id": "e34a9601-f054-41aa-b73d-4f0d9d56134b"
+        },
+        "tags": [],
+        "tool_ids": [],
+        "is_evaluated": true,
+        "name": "Code Migration_Migration Review Agent_3603"
+      },
+      {
+        "id": 39348,
+        "is_active": true,
+        "created_by": null,
+        "created_at": "2026-09-30T07:15:41.985550",
+        "modified_by": null,
+        "modified_at": "2026-09-30T12:18:58.893618",
+        "agent_name": "Code Validation Agent_Ravi",
+        "description": "Agent to review the code and provide the feedback",
+        "project_id": 6,
+        "design_pattern_id": 22,
+        "framework_id": 10,
+        "llm_model_id": 3395,
+        "security_group_id": "",
+        "human_input_mode": true,
+        "max_consecutive_reply": 5,
+        "prompt_id": 25069,
+        "rag_ids": [],
+        "a2a_enabled": false,
+        "mcp_enabled": false,
+        "is_public": false,
+        "version": "1.0",
+        "parent_agent_id": null,
+        "agent_config": {
+          "llm_parameters": {
+            "temperature": 0.3,
+            "max_tokens": 80000
+          },
+          "a2a_config": null
+        },
+        "publish_status": "Published",
+        "trace_id": {
+          "status": "success",
+          "trace_id": "94c5f654-b3f9-4a8f-80df-b49b53fea480"
+        },
+        "tags": [],
+        "tool_ids": [],
+        "is_evaluated": true,
+        "name": "Code Validation Agent_Ravi"
+      },
+      {
+        "id": 38976,
+        "is_active": true,
+        "created_by": null,
+        "created_at": "2026-09-28T14:12:59.440504",
+        "modified_by": null,
+        "modified_at": "2026-09-29T14:25:53.698654",
+        "agent_name": "Implementation Summary Agent_Gaurav_chhonker",
+        "description": "Generates a business and technical implementation report summarizing all development activities and validation results.",
+        "project_id": 6,
+        "design_pattern_id": 20,
+        "framework_id": 10,
+        "llm_model_id": 3395,
+        "security_group_id": "",
+        "human_input_mode": true,
+        "max_consecutive_reply": 5,
+        "prompt_id": 24644,
+        "rag_ids": [],
+        "a2a_enabled": false,
+        "mcp_enabled": false,
+        "is_public": false,
+        "version": "1.0",
+        "parent_agent_id": null,
+        "agent_config": {
+          "llm_parameters": {
+            "temperature": 0.3,
+            "max_tokens": 80000
+          },
+          "a2a_config": null
+        },
+        "publish_status": "Published",
+        "trace_id": {
+          "status": "success",
+          "trace_id": "2e76e031-63b4-4efc-b014-7604d3b76399"
+        },
+        "tags": [],
+        "tool_ids": [
+          11574
+        ],
+        "is_evaluated": true,
+        "name": "Implementation Summary Agent_Gaurav_chhonker"
+      }
+    ],
+    "agent_details": [],
+    "graph_nodes": null,
+    "reference_chat_history": false,
+    "ltm_top_k": 3,
+    "ltm_search_method": "semantic",
+    "ltm_similarity_threshold": 0.75,
+    "ltm_wiki_enabled": false
+  },
+  "publish_status": "Published",
+  "a2a_enabled": false,
+  "pattern_type": 0,
+  "lf_id": null,
+  "trace_id": {
+    "status": "success",
+    "trace_id": "bbf79966-a3e9-445e-90c5-ad8919216ab0"
+  },
+  "agent_details": [
+    {
+      "modified_by": null,
+      "llm_model_id": 3212,
+      "mcp_enabled": false,
+      "agent_config": {
+        "llm_parameters": {
+          "temperature": 0.1,
+          "max_tokens": 19984
+        },
+        "a2a_config": null
+      },
+      "security_group_id": null,
+      "is_public": false,
+      "modified_at": "2026-10-01T12:40:54.012497",
+      "design_pattern_id": 21,
+      "is_evaluated": true,
+      "project_id": 6,
+      "max_consecutive_reply": 25,
+      "a2a_enabled": true,
+      "version": "1.0",
+      "prompt_id": 23414,
+      "is_active": true,
+      "agent_name": "Code Migration_Migration Plan Agent_3277",
+      "description": "Agent for generating migration plan for migrating code from source language to target language",
+      "rag_ids": [],
+      "parent_agent_id": null,
+      "created_by": null,
+      "framework_id": 10,
+      "human_input_mode": false,
+      "publish_status": "Published",
+      "trace_id": {
+        "status": "success",
+        "trace_id": "f4d986e2-7b12-40da-bd98-74ab4ba9cee5"
+      },
+      "id": 37754,
+      "created_at": "2026-09-17T05:04:18.206820",
+      "tool_ids": [],
+      "prompt_details": {
+        "created_by": 12357,
+        "description": "Prompt for generating migration plan to migrate code from source to target language.",
+        "publish_status": true,
+        "varriables": [
+          {
+            "name": "source_lang",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "python",
+            "fileName": null
+          },
+          {
+            "name": "source_version",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "3",
+            "fileName": null
+          },
+          {
+            "name": "target_lang",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "Java",
+            "fileName": null
+          },
+          {
+            "name": "target_version",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "17",
+            "fileName": null
+          },
+          {
+            "name": "target_framework",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "Spring Boot",
+            "fileName": null
+          },
+          {
+            "name": "code_snippet",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "import java.util.List;\nimport java.util.stream.Collectors;\n\npublic class CustomerService {\n\n    public List<String> getActiveCustomerNames(List<Customer> customers) {\n        return customers.stream()\n                .filter(Customer::isActive)\n                .map(Customer::getName)\n                .collect(Collectors.toList());\n    }\n\n    public static class Customer {\n        private String name;\n        private boolean active;\n\n        public Customer(String name, boolean active) {\n            this.name = name;\n            this.active = active;\n        }\n\n        public String getName() {\n            return name;\n        }\n\n        public boolean isActive() {\n            return active;\n        }\n    }\n}",
+            "fileName": null
+          }
+        ],
+        "created_at": "2026-09-17T05:04:18.050324+00:00",
+        "user_prompt": "Please provide a comprehensive step-by-step migration plan for the following code snippet in {source_lang} {source_version} to {target_lang} {target_version} using the {target_framework} framework. Ensure that all functions, classes, and relevant components are included in the migration plan. Include the required technical details for migration, such as class and struct definitions, all function definitions, libraries and dependencies, pointers and references, memory management, data types, syntax differences, and required import statements. Additionally, provide a brief explanation of the purpose of the code snippet and any relevant context that may assist in the migration process. Source {source_lang} {source_version} code: {code_snippet}. Please ensure that the plan is thorough and addresses every function in the provided code snippet. Do not include the migrated code in your response.",
+        "lm_params": {
+          "temperature": 0.1,
+          "max_token": 19984,
+          "format": "text"
+        },
+        "id": 23414,
+        "modified_by": 12357,
+        "is_public": false,
+        "version": "1.0",
+        "system_prompt": "You are a highly knowledgeable and detail-oriented assistant specializing in code migration across different programming languages and frameworks. Your role is to provide comprehensive, step-by-step migration plans that include all necessary technical details, ensuring accuracy and completeness. Maintain a professional and instructive tone, and ensure that your responses are thorough and easy to follow.",
+        "modified_at": "2026-09-17T12:24:14.039884+00:00",
+        "examples": [
+          {
+            "input": "",
+            "output": ""
+          }
+        ],
+        "trace_id": {
+          "status": "success",
+          "trace_id": "c8825dc1-5695-45ba-9030-a65482091e62"
+        },
+        "project_id": 6,
+        "lm_config_id": 3212,
+        "parent_prompt_id": null,
+        "mcp_enabled": false,
+        "is_evaluated": false,
+        "is_active": true,
+        "name": "Code Migration_Migration Planner Prompt_2983"
+      }
+    },
+    {
+      "modified_by": null,
+      "llm_model_id": 3212,
+      "mcp_enabled": false,
+      "agent_config": {
+        "llm_parameters": {
+          "temperature": 0.1,
+          "max_tokens": 19984
+        },
+        "a2a_config": null
+      },
+      "security_group_id": null,
+      "is_public": false,
+      "modified_at": "2026-10-01T12:20:19.971369",
+      "design_pattern_id": 21,
+      "is_evaluated": true,
+      "project_id": 6,
+      "max_consecutive_reply": 5,
+      "a2a_enabled": false,
+      "version": "1.0",
+      "prompt_id": 23415,
+      "is_active": true,
+      "agent_name": "Code Migration_Code Migration Agent_3136",
+      "framework_id": 10,
+      "rag_ids": [],
+      "parent_agent_id": null,
+      "created_by": null,
+      "description": "Agent for generating migration code for migration from source to target language.",
+      "human_input_mode": false,
+      "publish_status": "Published",
+      "trace_id": {
+        "status": "success",
+        "trace_id": "dc04bf46-6e4b-49ff-81ee-9543ba37e70f"
+      },
+      "id": 37755,
+      "created_at": "2026-09-17T05:04:18.573685",
+      "tool_ids": [],
+      "prompt_details": {
+        "created_by": 12357,
+        "description": "Prompt for generating migration plan to migrate code from source to target language.",
+        "publish_status": false,
+        "varriables": [
+          {
+            "name": "source_lang",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "Java",
+            "fileName": null
+          },
+          {
+            "name": "source_version",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "8",
+            "fileName": null
+          },
+          {
+            "name": "target_lang",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "Java",
+            "fileName": null
+          },
+          {
+            "name": "target_version",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "17",
+            "fileName": null
+          },
+          {
+            "name": "target_framework",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "Spring Boot",
+            "fileName": null
+          },
+          {
+            "name": "code_snippet",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "public class UserService {\n\n    public String getUserName(User user) {\n        if (user != null && user.isActive()) {\n            return user.getName();\n        }\n        return \"Unknown\";\n    }\n\n    static class User {\n        private String name;\n        private boolean active;\n\n        public String getName() { return name; }\n        public boolean isActive() { return active; }\n    }\n}",
+            "fileName": null
+          },
+          {
+            "name": "migration_plan",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "1. Upgrade Java version from 8 to 17 and ensure compatibility.\n2. Refactor code to align with Spring Boot architecture.\n3. Convert the service class into a Spring @Service component.\n4. Replace manual object handling with dependency injection where applicable.\n5. Ensure null safety and use modern Java features where possible.\n6. Prepare the class for integration within a Spring Boot application context.",
+            "fileName": null
+          }
+        ],
+        "created_at": "2026-09-17T05:04:18.511745+00:00",
+        "user_prompt": "Using the provided migration plan, fully migrate the following {source_lang} {source_version} code snippet to {target_lang} {target_version} using the {target_framework} framework. Ensure all functions and components from the source code are included, make adjustments for any issues, add necessary imports, and follow {target_lang} coding conventions.\r\n\r\nSource Code ({source_lang} {source_version}):\r\n{code_snippet}\r\n\r\nMigration Plan:\r\n{migration_plan}\r\n\r\nPlease provide the complete migrated {target_lang} code snippet in a properly formatted markdown code block.",
+        "lm_params": {
+          "temperature": 0.1,
+          "max_token": 500,
+          "format": "text"
+        },
+        "id": 23415,
+        "modified_by": null,
+        "is_public": false,
+        "version": "1.0",
+        "system_prompt": "You are a highly skilled software migration assistant with expertise in multiple programming languages, frameworks, and version-specific features. Your role is to accurately and completely migrate source code from one language and version to another, following a provided migration plan step-by-step. You must ensure all functions, components, and logic from the source code are preserved in the target code, making necessary adjustments to address any unforeseen issues. Include all required imports, libraries, and adhere strictly to the target language's coding conventions and formatting standards. Provide the final migrated code in a clear, properly formatted markdown code block.",
+        "modified_at": null,
+        "examples": [
+          {
+            "input": "",
+            "output": ""
+          }
+        ],
+        "trace_id": null,
+        "project_id": 6,
+        "lm_config_id": 3212,
+        "parent_prompt_id": null,
+        "mcp_enabled": false,
+        "is_evaluated": false,
+        "is_active": true,
+        "name": "Code Migration_Code Migration Prompt_2052"
+      }
+    },
+    {
+      "modified_by": null,
+      "llm_model_id": 3212,
+      "mcp_enabled": false,
+      "agent_config": {
+        "llm_parameters": {
+          "temperature": 0.1,
+          "max_tokens": 19984
+        },
+        "a2a_config": null
+      },
+      "security_group_id": null,
+      "is_public": false,
+      "modified_at": "2026-10-01T11:50:52.174802",
+      "design_pattern_id": 21,
+      "is_evaluated": true,
+      "project_id": 6,
+      "max_consecutive_reply": 5,
+      "a2a_enabled": false,
+      "version": "1.0",
+      "prompt_id": 23416,
+      "is_active": true,
+      "agent_name": "Code Migration_Migration Review Agent_3603",
+      "framework_id": 10,
+      "rag_ids": [],
+      "parent_agent_id": null,
+      "created_by": null,
+      "description": "Agent for reviewing the migrated code to generate the fully migration code from source to target language.",
+      "human_input_mode": false,
+      "publish_status": "Published",
+      "trace_id": {
+        "status": "success",
+        "trace_id": "94c1c74b-ffce-43f3-9833-69b70c455cd9"
+      },
+      "id": 37756,
+      "created_at": "2026-09-17T05:04:18.846073",
+      "tool_ids": [],
+      "prompt_details": {
+        "created_by": 12357,
+        "description": "Prompt for generating migration plan to migrate code from source to target language.",
+        "publish_status": false,
+        "varriables": [
+          {
+            "name": "source_lang",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "Java",
+            "fileName": null
+          },
+          {
+            "name": "source_version",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "8",
+            "fileName": null
+          },
+          {
+            "name": "target_lang",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "Java",
+            "fileName": null
+          },
+          {
+            "name": "target_version",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "17",
+            "fileName": null
+          },
+          {
+            "name": "target_framework",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "Spring Boot",
+            "fileName": null
+          },
+          {
+            "name": "classname_prompt",
+            "isFileInput": false,
+            "isRequired": false,
+            "value": "UserService",
+            "fileName": null
+          },
+          {
+            "name": "code_snippet",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "public class UserService {\n\n    public String getUserName(User user) {\n        if (user != null && user.isActive()) {\n            return user.getName();\n        }\n        return \"Unknown\";\n    }\n\n    static class User {\n        private String name;\n        private boolean active;\n\n        public String getName() { return name; }\n        public boolean isActive() { return active; }\n    }\n}",
+            "fileName": null
+          },
+          {
+            "name": "migrated_code",
+            "isFileInput": false,
+            "isRequired": true,
+            "value": "import org.springframework.stereotype.Service;\n\n@Service\npublic class UserService {\n\n    public String getUserName(User user) {\n        if (user != null && user.isActive()) {\n            return user.getName();\n        }\n        return \"Unknown\";\n    }\n\n    static class User {\n        private String name;\n        private boolean active;\n\n        public String getName() { return name; }\n        public boolean isActive() { return active; }\n    }\n}",
+            "fileName": null
+          }
+        ],
+        "created_at": "2026-09-17T05:04:18.785556+00:00",
+        "user_prompt": "Strictly follow the review points below to provide a complete migration of the code from {source_lang} {source_version} to {target_lang} {target_version} using the {target_framework} framework. Ensure that all functions and methods are fully converted, and focus on the areas where the migrated code is lacking.\r\n\r\nReview points:\r\n\r\nUse {target_lang} {target_version} standard naming conventions and formatting.\r\nEnsure correct {target_lang} {target_version} syntax throughout.\r\nApply {target_lang} {target_version} method naming conventions, such as camelCase.\r\n{classname_prompt}\r\nInclude inline comments on important lines, classes, and methods to clarify their purposes.\r\nProvide a docstring for each method in the migrated code.\r\nInclude all functions and methods from the source code in the migrated version.\r\nAvoid any non-code text; only include relevant code.\r\nDo not generate any explanations or comments; return only the updated migrated code.\r\nSource {source_lang} {source_version} code: {code_snippet}\r\n\r\nMigrated {target_lang} {target_version} code: {migrated_code}\r\n\r\nReturn only the fully migrated code, without any review comments or explanations.",
+        "lm_params": {
+          "temperature": 0.1,
+          "max_token": 500,
+          "format": "text"
+        },
+        "id": 23416,
+        "modified_by": null,
+        "is_public": false,
+        "version": "1.0",
+        "system_prompt": "You are a highly skilled code migration assistant. Your role is to convert code from one programming language to another, ensuring that all functions and methods are fully converted and optimized according to the target language's standards. Your tone should be professional and precise. You must adhere strictly to the target language's naming conventions, syntax, and formatting rules. Provide inline comments and docstrings for clarity, but avoid any non-code text or explanations. Your output should be the fully migrated code only.",
+        "modified_at": null,
+        "examples": [
+          {
+            "input": "",
+            "output": ""
+          }
+        ],
+        "trace_id": null,
+        "project_id": 6,
+        "lm_config_id": 3212,
+        "parent_prompt_id": null,
+        "mcp_enabled": false,
+        "is_evaluated": false,
+        "is_active": true,
+        "name": "Code Migration_Migration Review Prompt_2949"
+      }
+    },
+    {
+      "modified_by": null,
+      "llm_model_id": 3395,
+      "mcp_enabled": false,
+      "agent_config": {
+        "llm_parameters": {
+          "temperature": 0.3,
+          "max_tokens": 80000
+        },
+        "a2a_config": null
+      },
+      "security_group_id": "",
+      "is_public": false,
+      "modified_at": "2026-10-01T12:28:17.633100",
+      "design_pattern_id": 22,
+      "is_evaluated": true,
+      "project_id": 6,
+      "max_consecutive_reply": 5,
+      "a2a_enabled": false,
+      "version": "1.0",
+      "prompt_id": 25069,
+      "is_active": true,
+      "agent_name": "Code Validation Agent_Ravi",
+      "description": "Agent to review the code and provide the feedback",
+      "rag_ids": [],
+      "parent_agent_id": null,
+      "created_by": null,
+      "framework_id": 10,
+      "human_input_mode": true,
+      "publish_status": "Published",
+      "trace_id": {
+        "status": "success",
+        "trace_id": "2def1b52-25ea-4f58-8e2f-36d44fc1bbe8"
+      },
+      "id": 39348,
+      "created_at": "2026-09-30T07:15:41.985550",
+      "tool_ids": [],
+      "prompt_details": {
+        "created_by": 12829,
+        "description": "Prompt to validate the code based on the criteria",
+        "publish_status": true,
+        "varriables": [
+          {
+            "name": "ticket_requirements",
+            "isFileInput": false,
+            "isRequired": false,
+            "value": "",
+            "fileName": null
+          },
+          {
+            "name": "code_diff",
+            "isFileInput": false,
+            "isRequired": false,
+            "value": "",
+            "fileName": null
+          },
+          {
+            "name": "context",
+            "isFileInput": false,
+            "isRequired": false,
+            "value": "",
+            "fileName": null
+          }
+        ],
+        "created_at": "2026-09-30T07:13:09.889055+00:00",
+        "user_prompt": "Review the following code change against the ticket requirements and provide a structured code review.\r\n\r\nTicket or acceptance criteria:\r\n{ticket_requirements}\r\n\r\nCode diff or pull request content:\r\n{code_diff}\r\n\r\nRelevant context, architecture notes, or API contracts:\r\n{context}\r\n\r\nPlease assess the change using these categories:\r\n1. Functional correctness and business logic: confirm whether the implementation satisfies the requirements, handles edge cases such as null values, empty inputs, duplicates, extreme values, and fails safely with appropriate error handling.\r\n2. Architecture and design: evaluate separation of concerns, simplicity, extensibility, reuse of existing utilities, avoidance of unnecessary abstraction, and API or schema backward compatibility.\r\n3. Security and safety: check input validation, sanitization, authentication, authorization, PII handling, logging of sensitive data, and hardcoded secrets.\r\n4. Performance and scalability: identify inefficient database access, N+1 queries, missing indexes, excessive memory usage, resource leaks, concurrency issues, race conditions, or deadlocks.\r\n5. Testing and verification: evaluate whether tests are meaningful, cover edge cases and behavior, and are deterministic without flaky timing or external dependencies.\r\n6. Observability and operability: assess logging quality, log levels, troubleshooting context, metrics, tracing, and alerts for critical business or failure paths.\r\n\r\nReturn the review in this format:\r\n- Summary\r\n- Blocking issues, if any\r\n- Non-blocking recommendations\r\n- Security concerns\r\n- Performance concerns\r\n- Test coverage gaps\r\n- Suggested follow-up questions\r\n\r\nFor each issue, include severity, affected area, explanation, and a concrete recommendation.",
+        "lm_params": {
+          "temperature": 0.3,
+          "max_token": 80000,
+          "format": "text"
+        },
+        "id": 25069,
+        "modified_by": 12829,
+        "is_public": false,
+        "version": "1.0",
+        "system_prompt": "You are an expert senior software engineer and code reviewer. Your role is to review code changes thoroughly for functional correctness, architecture, security, performance, testing, and operability. Be practical, concise, and evidence-based. Prioritize findings by severity and business impact. Avoid nitpicks unless they affect maintainability, correctness, or risk. When reviewing, consider requirements, edge cases, failure modes, separation of concerns, API compatibility, input validation, authentication and authorization, data privacy, secrets management, database efficiency, resource management, concurrency, test quality, logging, metrics, and tracing. Provide actionable feedback with clear explanations and suggested fixes where appropriate.",
+        "modified_at": "2026-09-30T07:14:42.398883+00:00",
+        "examples": [
+          {
+            "input": "",
+            "output": ""
+          }
+        ],
+        "trace_id": null,
+        "project_id": 6,
+        "lm_config_id": 3395,
+        "parent_prompt_id": null,
+        "mcp_enabled": false,
+        "is_evaluated": false,
+        "is_active": true,
+        "name": "Code Validation Prompt_Ravi"
+      }
+    },
+    {
+      "modified_by": null,
+      "llm_model_id": 3395,
+      "mcp_enabled": false,
+      "agent_config": {
+        "llm_parameters": {
+          "temperature": 0.3,
+          "max_tokens": 80000
+        },
+        "a2a_config": null
+      },
+      "security_group_id": "",
+      "is_public": false,
+      "modified_at": "2026-10-01T12:30:31.599723",
+      "design_pattern_id": 20,
+      "is_evaluated": true,
+      "project_id": 6,
+      "max_consecutive_reply": 5,
+      "a2a_enabled": false,
+      "version": "1.0",
+      "prompt_id": 24644,
+      "is_active": true,
+      "agent_name": "Implementation Summary Agent_Gaurav_chhonker",
+      "description": "Generates a business and technical implementation report summarizing all development activities and validation results.",
+      "rag_ids": [],
+      "parent_agent_id": null,
+      "created_by": null,
+      "framework_id": 10,
+      "human_input_mode": true,
+      "publish_status": "Published",
+      "trace_id": {
+        "status": "success",
+        "trace_id": "1450ebf1-b069-4293-ab17-3d659271b949"
+      },
+      "id": 38976,
+      "created_at": "2026-09-28T14:12:59.440504",
+      "tool_ids": [
+        11574
+      ],
+      "prompt_details": {
+        "created_by": 11426,
+        "description": "Generates a business and technical implementation report summarizing all development activities and validation results.",
+        "publish_status": true,
+        "varriables": [
+          {
+            "name": "Story_ID",
+            "isFileInput": false,
+            "isRequired": false,
+            "value": "",
+            "fileName": null
+          }
+        ],
+        "created_at": "2026-09-28T14:10:20.723170+00:00",
+        "user_prompt": "Generate the final implementation summary for Story {Story_ID}.\r\n\r\nInclude generated files, test results, validation results, assumptions, risks, and deployment readiness status.",
+        "lm_params": {
+          "temperature": 0.3,
+          "max_token": 80000,
+          "format": "text"
+        },
+        "id": 24644,
+        "modified_by": 11426,
+        "is_public": false,
+        "version": "1.0",
+        "system_prompt": "You are a Release Manager.\r\n\r\nYour responsibility is to create a business-friendly implementation report.\r\n\r\nTasks:\r\n\r\n1. Summarize implemented feature.\r\n2. Summarize generated code.\r\n3. Summarize generated tests.\r\n4. Summarize validation findings.\r\n5. Summarize assumptions.\r\n6. Summarize limitations.\r\n7. Summarize deployment readiness.\r\n\r\nOutput Sections:\r\n\r\n- Story Reference\r\n- Business Summary\r\n- Technical Summary\r\n- Generated Files\r\n- Modified Files\r\n- Components Updated\r\n- Unit Test Results\r\n- Validation Results\r\n- Assumptions\r\n- Limitations\r\n- Recommended Next Steps\r\n\r\nAt the end provide:\r\n\r\nNEXT AGENT:\r\nStory-To-Code Orchestrator Agent_Gaurav_chhonker\r\nMANDATORY OUTPUT\r\n\r\nAt the end of your response always provide:\r\n\r\nAGENT STATUS: COMPLETED\r\n\r\nNEXT AGENT:\r\nStory-To-Code Orchestrator Agent_Gaurav_chhonker\r\n\r\nHANDOFF SUMMARY:\r\n- Implementation Summary\r\n- Generated Components\r\n- Test Summary\r\n- Validation Summary\r\n- Assumptions\r\n- Constraints\r\n- Deployment Recommendations\r\n\r\nGenerate implementation summary and deployment readiness information.",
+        "modified_at": "2026-09-29T13:51:18.225567+00:00",
+        "examples": [
+          {
+            "input": "",
+            "output": ""
+          }
+        ],
+        "trace_id": {
+          "status": "success",
+          "trace_id": "1f625f5a-f5e3-44e7-b9f5-9a5433486393"
+        },
+        "project_id": 6,
+        "lm_config_id": 3395,
+        "parent_prompt_id": null,
+        "mcp_enabled": false,
+        "is_evaluated": false,
+        "is_active": true,
+        "name": "Implementation Summary_Gaurav_chhonker"
+      },
+      "tools_details": [
+        {
+          "connector_properties": [
+            {
+              "testedFunctions": [],
+              "filePathsByFunction": {
+                "execute": []
+              }
+            }
+          ],
+          "id": 11574,
+          "name": "Jira Story To Code Integration Tool_Gaurav",
+          "version": null,
+          "connector_methods": [],
+          "project_id": 6,
+          "connector_actions": [],
+          "json_schema": {
+            "execute": {
+              "issueKey": {
+                "title": "Issue Key",
+                "description": "The issue key used as the story ID.",
+                "is_optional": false,
+                "type": "string"
+              }
+            }
+          },
+          "execution_wait_time": null,
+          "documentation_type": 0,
+          "output_details": "",
+          "input_details": {},
+          "is_connector": false,
+          "is_active": true,
+          "auth_type": 0,
+          "api_list": [],
+          "connector_script": "def execute(issueKey):\r\n\r\n    return {\r\n        \"storyId\": issueKey,\r\n        \"title\": \"Customer Search API\",\r\n        \"description\": \"Users should search customers by Name, Email and Mobile Number.\",\r\n        \"acceptanceCriteria\": [\r\n            \"Search by Name\",\r\n            \"Search by Email\",\r\n            \"Search by Mobile Number\"\r\n        ],\r\n        \"priority\": \"High\",\r\n        \"status\": \"Open\"\r\n    }",
+          "mcp_enabled": false,
+          "vault_enabled": true,
+          "created_by": 11426,
+          "icon_path": null,
+          "authorization_type": 0,
+          "publish_status": true,
+          "is_public": false,
+          "created_at": "2026-09-28T15:37:07.622722+00:00",
+          "authorization_config": {},
+          "modified_by": 11426,
+          "tool_type": 1,
+          "field_info": null,
+          "connector_base_id": null,
+          "virtual_env_name": "venv_83c8d56c",
+          "modified_at": "2026-09-28T15:37:07.622742+00:00",
+          "description": "Retrieves Jira User Stories, Epics, Tasks, Sub-tasks, acceptance criteria, comments, and project metadata required for AI-driven requirement analysis, implementation planning, code generation, testing, validation, and implementation summary generation.",
+          "package_list": [],
+          "function_list": [
+            "execute"
+          ]
+        }
+      ]
+    }
+  ],
+  "tool_details": []
+}
