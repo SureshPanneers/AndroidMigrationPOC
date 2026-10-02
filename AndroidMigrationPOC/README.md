@@ -2,7 +2,7 @@
 
 This README documents, step by step, how the **AndroidMigrationModernization-SureshPanneerSelvam** use case was built, executed, and published inside HCLTech's **AI Force** platform (`https://aiforce.hcltech.com`). It covers the full journey — from signing in, through the multi-agent migration pipeline (Supervisor Pattern), to publishing the finished use case in the catalogue.
 
-Screenshots embedded below were recovered from the working notes captured in OneNote (`AIForceCodeMigrations.one`) and are stored locally at [docs/screenshots](docs/screenshots).
+Screenshots embedded below are stored locally at [docs/screenshots](docs/screenshots).
 
 > **Target application migrated**: Google's archived `android-BasicNetworking` sample (Java, legacy support library, deprecated `ConnectivityManager`/`NetworkInfo` APIs) → modern Kotlin + AndroidX + `ConnectivityManager.NetworkCallback`/`NetworkCapabilities`.
 
@@ -207,3 +207,13 @@ sequenceDiagram
 - A fully working, agentically-generated Kotlin/AndroidX migration of a legacy Java Android sample, validated against an explicit requirements matrix.
 - Locally saved deliverable: [docs](docs) (see also the original generated project under `migrated-output/` if present alongside this README).
 - The use case itself is now published and reusable in AI Force's **Use Cases Catalogue** under **AI Force.Software → Requirements Planning**.
+
+## Final Migrated code in folder path AndroidMigrationPOC\migrated-output
+
+<img width="958" height="228" alt="image" src="https://github.com/user-attachments/assets/d9d704ac-cf89-4128-8236-5007c09466b5" />
+
+## UseCase Outputs Folder
+
+<img width="719" height="193" alt="image" src="https://github.com/user-attachments/assets/3d0dc6e7-ea6c-45ea-9d73-109e1e2a45fd" />
+
+
