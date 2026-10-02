@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Basic Networking</string>
+    <string name="intro_message">This sample demonstrates how to check network connectivity on Android.\n\nTap the TEST button in the action bar to query the current state. The result is logged below.</string>
+    <string name="wifi_connection">The active connection is Wi-Fi.</string>
+    <string name="mobile_connection">The active connection is mobile (cellular).</string>
+    <string name="other_connection">The active connection is neither Wi-Fi nor mobile (e.g. Ethernet or VPN).</string>
+    <string name="no_wifi_or_mobile">No usable network connection is available.</string>
+    <string name="test_action">Test</string>
+    <string name="clear_action">Clear</string>
+</resources>
