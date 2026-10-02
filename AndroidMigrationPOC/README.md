@@ -34,7 +34,8 @@ flowchart TD
 
 Navigate to `https://aiforce.hcltech.com` and authenticate using Microsoft Entra ID (SSO) or a username/password login. Once signed in, you land on the AI Force home page with the left-hand navigation rail exposing all studios: **Home, Projects, Use Cases Catalog, Build Your Own Use Case, Prompt Studio, Tool Studio, RAG Studio, Agentic AI Studio, MCP Studio, Governance and Evaluation Studio**.
 
-![AI Force home landing page](docs/screenshots/01-aiforce-home-landing.png)
+<img width="623" height="432" alt="Screenshot 1" src="https://github.com/user-attachments/assets/4e1b0f59-cb59-4663-ad02-82c07480302e" />
+
 
 ---
 
@@ -190,9 +191,9 @@ sequenceDiagram
 
 ---
 
-## Key Gotchas Encountered
+## Key migration steps
 
-| # | Gotcha | Workaround |
+| # | Workaround |
 |---|--------|------------|
 | 1 | Attach box rejects raw source files (`.java`, `.xml`, `.gradle`) | Bundle source into a single `.txt` file before upload |
 | 2 | Sending a nudge mid-chain sometimes **restarts the entire pipeline** from the Migration Plan Agent instead of resuming | Explicitly name the next agent(s) in the nudge message (e.g. "please have the Code Validation Agent and Implementation Summary Agent run") |
